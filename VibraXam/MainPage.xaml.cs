@@ -36,5 +36,22 @@ namespace VibraXam
                 // Other error has occurred.
             }
         }
+        
+        void Button_Clicked2(System.Object sender, System.EventArgs e)
+        {
+            try
+            {
+                // Haptic
+                HapticFeedback.Perform(HapticFeedbackType.Click);
+            }
+            catch (FeatureNotSupportedException ex)
+            {
+                // Feature not supported on device
+            }
+            catch (Exception ex)
+            {
+                // Other error has occurred.
+            }
+        }
     }
 }
