@@ -16,7 +16,7 @@ namespace VibraXam
             InitializeComponent();
         }
 
-        void Button_Clicked(System.Object sender, System.EventArgs e)
+        async void Button_Clicked(System.Object sender, System.EventArgs e)
         {
             try
             {
@@ -29,15 +29,15 @@ namespace VibraXam
             }
             catch (FeatureNotSupportedException ex)
             {
-                // Feature not supported on device
+                await DisplayAlert("Sorry", "No can do amigo - no device support", "Ok");
             }
             catch (Exception ex)
             {
-                // Other error has occurred.
+                await DisplayAlert("Ooops", ex.Message, "Ok");
             }
         }
         
-        void Button_Clicked2(System.Object sender, System.EventArgs e)
+        async void Button_Clicked2(System.Object sender, System.EventArgs e)
         {
             try
             {
@@ -46,11 +46,11 @@ namespace VibraXam
             }
             catch (FeatureNotSupportedException ex)
             {
-                // Feature not supported on device
+                await DisplayAlert("Sorry", "No can do amigo - no device support", "Ok");
             }
             catch (Exception ex)
             {
-                // Other error has occurred.
+                await DisplayAlert("Ooops", ex.Message, "Ok");
             }
         }
     }
